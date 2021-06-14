@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        vm.loadMovies()
+        vm.loadTitleFromJson()
 
         setTextViewText(R.id.text_view, vm.greeting)
 

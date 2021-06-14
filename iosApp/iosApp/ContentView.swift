@@ -2,10 +2,21 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-    let presenter = Presenter()
+    let vm = MainViewModel()
+    var jsonText: Text
+    
+    init(){
+        vm.loadTitleFromJson()
+    }
 
 	var body: some View {
-        Text(presenter.getGreeting())
+        Text(vm.greeting)
+        let jsonText = Text("")
+        vm.jsonTitle.bind { [weak self](title) in
+            guard let self = self else {return}
+            jsonText.setText(title)
+        }
+        jsonText
 	}
 }
 

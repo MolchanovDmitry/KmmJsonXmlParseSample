@@ -12,8 +12,7 @@ class MainViewModel : BaseViewModel(uiDispatcher) {
 
     private val interactor = JsonInteractor.instance
 
-
-    fun loadMovies() {
+    fun loadTitleFromJson() {
         scope.launch {
             val result = interactor.getTitleFromJson()
             jsonTitle.value = result
