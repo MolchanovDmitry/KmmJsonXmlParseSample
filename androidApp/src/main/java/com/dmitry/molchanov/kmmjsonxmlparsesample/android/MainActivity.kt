@@ -1,35 +1,29 @@
 package com.dmitry.molchanov.kmmjsonxmlparsesample.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dmitry.molchanov.kmmjsonxmlparsesample.Greeting
 import android.widget.TextView
-import androidx.activity.viewModels
-import com.dmitry.molchanov.kmmjsonxmlparsesample.JsonInteractor
-import com.dmitry.molchanov.kmmjsonxmlparsesample.NetworkRepository
-
-fun greet(): String {
-    return Greeting().greeting()
-}
+import androidx.appcompat.app.AppCompatActivity
+import com.dmitry.molchanov.kmmjsonxmlparsesample.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val vm by viewModels<MainViewModel> {
-        val repositry = NetworkRepository()
-        val interacotor = JsonInteractor(repositry)
-        MainViewModelFactory(interacotor)
-    }
+    private val vm = MainViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        vm.loadMovies()
 
-        vm.getTitleFromJson { title ->
-            val text = "Json title field: $title"
-            findViewById<TextView>(R.id.json_view).text = text
+        setTextViewText(R.id.text_view, vm.greeting)
+
+        vm.jsonTitle.bind { result ->
+            val text = result?.let { "Json: $it" } ?: "error"
+            setTextViewText(R.id.json_view, text)
         }
+    }
+
+    private fun setTextViewText(id: Int, text: String) {
+        findViewById<TextView>(id).text = text
     }
 }

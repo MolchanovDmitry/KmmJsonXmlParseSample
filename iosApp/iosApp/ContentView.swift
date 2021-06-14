@@ -2,10 +2,10 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-	let greet = Greeting().greeting()
+    let presenter = Presenter()
 
 	var body: some View {
-		Text(greet)
+        Text(presenter.getGreeting())
 	}
 }
 
