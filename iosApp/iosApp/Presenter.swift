@@ -9,17 +9,6 @@
 import Foundation
 import shared
 
-class Presenter{
-
-    let greet = Greeting()
-    //let interactor:JsonInteractor
+class Presenter(_ previews: View){
     
-    init(){
-        let repository = NetworkRepository()
-        //interactor = JsonInteractor(repository: repository)
-    }
-    
-    func getGreeting() -> String{
-        return greet.greeting()
-    }
 }
