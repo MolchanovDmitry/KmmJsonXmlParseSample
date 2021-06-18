@@ -10,11 +10,9 @@ buildscript {
 
     }
     dependencies {
-
-        classpath 'com.android.tools.build:gradle:4.2.1'
         def kotlinVersion = "1.5.10"
+        classpath 'com.android.tools.build:gradle:4.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "com.android.tools.build:gradle:4.2.1"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion"
     }
 }
