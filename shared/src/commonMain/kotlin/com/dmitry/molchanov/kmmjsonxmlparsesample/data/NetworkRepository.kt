@@ -1,4 +1,4 @@
-package com.dmitry.molchanov.kmmjsonxmlparsesample
+package com.dmitry.molchanov.kmmjsonxmlparsesample.data
 
 import io.ktor.client.*
 import io.ktor.client.features.json.*
@@ -6,6 +6,7 @@ import io.ktor.client.features.json.serializer.*
 import io.ktor.client.request.*
 
 class NetworkRepository {
+
     val client = HttpClient {
         install(JsonFeature) {
             val jsonDecoder = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }

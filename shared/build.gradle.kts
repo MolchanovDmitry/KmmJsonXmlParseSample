@@ -36,14 +36,15 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
+                implementation("io.ktor:ktor-client-cio:$ktorVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
 
                 // project ':shared': Could not find core-0.82.0-samplessources.jar (io.github.pdvrieze.xmlutil:core:0.82.0).
-                implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
-                implementation("io.github.pdvrieze.xmlutil:serialization-android:$xmlSerializerVersion")
+                //implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
+                //implementation("io.github.pdvrieze.xmlutil:serialization-android:$xmlSerializerVersion")
 
             }
         }
@@ -55,8 +56,8 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                //implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
-                //implementation("io.github.pdvrieze.xmlutil:serialization-android:$xmlSerializerVersion")
+                implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
+                implementation("io.github.pdvrieze.xmlutil:serialization-android:$xmlSerializerVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
             }

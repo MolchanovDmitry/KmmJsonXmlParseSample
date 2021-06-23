@@ -1,4 +1,4 @@
-package com.dmitry.molchanov.kmmjsonxmlparsesample
+package com.dmitry.molchanov.kmmjsonxmlparsesample.entity
 
 import kotlinx.serialization.Serializable
 

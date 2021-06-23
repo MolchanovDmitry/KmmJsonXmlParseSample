@@ -27,6 +27,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view"
         app:layout_constraintVertical_bias="0.244"
-        tools:text="Json title" />
+        tools:text="Json text" />
+
+    <TextView
+        android:id="@+id/xml_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/json_view"
+        tools:text="Xml text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

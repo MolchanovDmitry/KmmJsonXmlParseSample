@@ -3,7 +3,10 @@ package com.dmitry.molchanov.kmmjsonxmlparsesample.android
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.dmitry.molchanov.kmmjsonxmlparsesample.domain.XmlInteractor
 import com.dmitry.molchanov.kmmjsonxmlparsesample.viewmodel.MainViewModel
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         vm.loadTitleFromJson()
 
         setTextViewText(R.id.text_view, vm.greeting)
+
+        GlobalScope.launch {
+            val xml = XmlInteractor()
+            val totalPrice = xml.getTotalPriceFromXml()
+            val text = "Total price: $totalPrice"
+            setTextViewText(R.id.xml_view, text)
+        }
 
         vm.jsonTitle.bind { result ->
             val text = result?.let { "Json: $it" } ?: "error"
