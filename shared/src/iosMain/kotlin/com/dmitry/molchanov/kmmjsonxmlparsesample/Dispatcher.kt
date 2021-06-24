@@ -11,11 +11,18 @@ actual val uiDispatcher: CoroutineContext = MainDispatcher
 actual val ioDispatcher: CoroutineContext = MainDispatcher
 
 
+/**
+ * Если мы попытаемся заморозить уже замороженный объект, например, синглтоны,
+ * которые считаются замороженными по умолчанию, то получим FreezingException.
+ * Чтобы этого не произошло, помечаем синглтоны аннотацией [ThreadLocal],
+ * а глобальные переменные [SharedImmutable]:
+ */
 @ThreadLocal
 object MainDispatcher : CoroutineDispatcher() {
     override fun dispatch(context: CoroutineContext, block: Runnable) {
         dispatch_async(dispatch_get_main_queue()) {
             try {
+                // Для того, чтобы мы могли передавать изменяемые блоки кода и объекты между потоками, нам нужно их замораживать перед передачей
                 block.run().freeze()
             } catch (err: Throwable) {
                 throw err
@@ -23,3 +30,27 @@ object MainDispatcher : CoroutineDispatcher() {
         }
     }
 }
+
+/*
+/**
+ * https://github.com/Kotlin/kotlinx.coroutines/issues/462
+ * 1. Мы не можем использовать dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT.toLong(),0.toULong())),
+ *      потому что он не привязан ни к одному потоку в Kotlin/Native.
+ * 2. Kotlin/Native в отличие от Kotlin/JVM не может шарить корутины между потоками. А также любые изменяемые объекты.
+ */
+private object IODispatcher : CoroutineDispatcher() {
+    override fun dispatch(context: CoroutineContext, block: Runnable) {
+        dispatch_async(
+            dispatch_get_global_queue(
+                DISPATCH_QUEUE_PRIORITY_DEFAULT.toLong(),
+                0.toULong()
+            )
+        ) {
+            try {
+                block.run()
+            } catch (err: Throwable) {
+                throw err
+            }
+        }
+    }
+}*/
