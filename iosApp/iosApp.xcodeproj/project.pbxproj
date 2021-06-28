@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		2C393172268A40890008F417 /* DimaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C393171268A40890008F417 /* DimaDelegate.swift */; };
+		2C393175268A421E0008F417 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C393174268A421E0008F417 /* MainTabVC.swift */; };
+		2C393177268A42600008F417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C393176268A42600008F417 /* SceneDelegate.swift */; };
+		2C393179268A44FD0008F417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C393178268A44FD0008F417 /* Main.storyboard */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		C55C48F257708E3CBDF6A4C2 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719D70AF6616F9CBECC44D2D /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
@@ -15,6 +19,11 @@
 /* Begin PBXFileReference section */
 		02995BD315CA81A4A6C83B20 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		2C393171268A40890008F417 /* DimaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimaDelegate.swift; sourceTree = "<group>"; };
+		2C393173268A421E0008F417 /* MainTabVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabVC.xib; sourceTree = "<group>"; };
+		2C393174268A421E0008F417 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		2C393176268A42600008F417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2C393178268A44FD0008F417 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5E10C1C74F74FA386844AC18 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		719D70AF6616F9CBECC44D2D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +73,14 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				2C393176268A42600008F417 /* SceneDelegate.swift */,
+				2C393174268A421E0008F417 /* MainTabVC.swift */,
+				2C393173268A421E0008F417 /* MainTabVC.xib */,
+				2C393171268A40890008F417 /* DimaDelegate.swift */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				2C393178268A44FD0008F417 /* Main.storyboard */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C393179268A44FD0008F417 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C393177268A42600008F417 /* SceneDelegate.swift in Sources */,
+				2C393172268A40890008F417 /* DimaDelegate.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				2C393175268A421E0008F417 /* MainTabVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
