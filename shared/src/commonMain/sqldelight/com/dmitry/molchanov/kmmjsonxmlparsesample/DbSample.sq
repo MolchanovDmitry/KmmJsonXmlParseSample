@@ -1,0 +1,13 @@
+CREATE TABLE propTable (
+propName TEXT NOT NULL PRIMARY KEY,
+propValue TEXT NOT NULL
+);
+
+select:
+SELECT propValue
+FROM propTable
+WHERE propName = ?;
+
+insert:
+INSERT OR REPLACE INTO propTable(propName, propValue)
+VALUES ?;

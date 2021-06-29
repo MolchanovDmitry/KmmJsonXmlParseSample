@@ -10,7 +10,8 @@ plugins {
 
 sqldelight {
     database("AppDatabase") {
-        packageName = "com.example.db"
+        packageName = "com.dmitry.molchanov.kmmjsonxmlparsesample.db"
+        sourceFolders = listOf("sqldelight")
     }
 }
 

@@ -38,4 +38,34 @@
         app:layout_constraintTop_toBottomOf="@+id/json_view"
         tools:text="Xml text" />
 
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="db value"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xml_view" />
+
+    <Button
+        android:id="@+id/get_db_value_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get db value"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text"
+        app:layout_constraintEnd_toStartOf="@+id/set_db_value"
+        app:layout_constraintStart_toEndOf="@+id/edit_text"
+        app:layout_constraintTop_toTopOf="@+id/edit_text" />
+
+    <Button
+        android:id="@+id/set_db_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Set db value"
+        app:layout_constraintBottom_toBottomOf="@+id/get_db_value_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/get_db_value_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
