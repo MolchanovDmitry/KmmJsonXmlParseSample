@@ -1,16 +1,18 @@
 package com.dmitry.molchanov.kmmjsonxmlparsesample.android
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dmitry.molchanov.kmmjsonxmlparsesample.domain.XmlInteractor
-import com.dmitry.molchanov.kmmjsonxmlparsesample.viewmodel.MainViewModel
+import com.dmitry.molchanov.kmmjsonxmlparsesample.viewmodel.AndroidMainViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
-    private val vm = MainViewModel()
+    private val vm = AndroidMainViewModel(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,16 @@ class MainActivity : AppCompatActivity() {
         vm.jsonTitle.bind { result ->
             val text = result?.let { "Json: $it" } ?: "error"
             setTextViewText(R.id.json_view, text)
+        }
+
+        val editText = findViewById<EditText>(R.id.edit_text)
+        vm.dbValue.bind(editText::setText)
+        findViewById<Button>(R.id.set_db_value).setOnClickListener {
+            vm.setDbValue(editText.text.toString())
+        }
+
+        findViewById<Button>(R.id.get_db_value_button).setOnClickListener {
+            vm.getDbValue()
         }
     }
 

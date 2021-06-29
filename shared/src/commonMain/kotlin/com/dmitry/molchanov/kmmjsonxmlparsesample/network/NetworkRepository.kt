@@ -1,4 +1,4 @@
-package com.dmitry.molchanov.kmmjsonxmlparsesample.data
+package com.dmitry.molchanov.kmmjsonxmlparsesample.network
 
 import io.ktor.client.*
 import io.ktor.client.features.json.*

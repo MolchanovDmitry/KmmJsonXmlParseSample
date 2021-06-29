@@ -5,6 +5,14 @@ plugins {
     kotlin("native.cocoapods")
     kotlin("plugin.serialization")
     id("com.android.library")
+    id("com.squareup.sqldelight")
+}
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "com.dmitry.molchanov.kmmjsonxmlparsesample.db"
+        sourceFolders = listOf("sqldelight")
+    }
 }
 
 version = "1.0"
@@ -29,6 +37,7 @@ kotlin {
     }
 
     sourceSets {
+        val sqlDelightVersion = "1.5.0"
         val ktorVersion = "1.6.0"
         val serializationVersion = "1.2.1"
         val coroutinesVersion = "1.3.9-native-mt"
@@ -36,11 +45,17 @@ kotlin {
 
         val commonMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
+
+                // ktor
                 implementation("io.ktor:ktor-client-cio:$ktorVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
+
+                //sqldelight
+                implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+
 
                 // project ':shared': Could not find core-0.82.0-samplessources.jar (io.github.pdvrieze.xmlutil:core:0.82.0).
                 //implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
@@ -56,10 +71,17 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+
+                // xmlutil
                 implementation("io.github.pdvrieze.xmlutil:core:$xmlSerializerVersion")
                 implementation("io.github.pdvrieze.xmlutil:serialization-android:$xmlSerializerVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+
+                // ktor
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
+
+                // sqldelight
+                implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
             }
         }
         val androidTest by getting {
@@ -70,7 +92,11 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
+                // ktor
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
+
+                // sqldelight
+                implementation("com.squareup.sqldelight:native-driver:$sqlDelightVersion")
             }
         }
         val iosTest by getting

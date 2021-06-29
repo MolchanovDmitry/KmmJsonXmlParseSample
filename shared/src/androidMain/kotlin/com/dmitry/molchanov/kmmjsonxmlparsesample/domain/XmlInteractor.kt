@@ -1,8 +1,8 @@
 package com.dmitry.molchanov.kmmjsonxmlparsesample.domain
 
-import com.dmitry.molchanov.kmmjsonxmlparsesample.entity.Catalog
 import com.dmitry.molchanov.kmmjsonxmlparsesample.Constants
-import com.dmitry.molchanov.kmmjsonxmlparsesample.data.XmlRepository
+import com.dmitry.molchanov.kmmjsonxmlparsesample.entity.Catalog
+import com.dmitry.molchanov.kmmjsonxmlparsesample.network.XmlRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
