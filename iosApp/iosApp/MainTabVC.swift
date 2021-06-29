@@ -24,15 +24,15 @@ class MainTabVC: UITabBarController {
         
         let greetingLabel = UILabel()
         greetingLabel.textColor = .white
-        greetingLabel.adjustsFontForContentSizeCategory = false
+        greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         greetingLabel.text = presenter.greeting
         view.addSubview(greetingLabel)
         
         NSLayoutConstraint.activate([
             greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            greetingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            //jsonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            //jsonLabel.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 10)
+            greetingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            jsonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            jsonLabel.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 10)
         ])
         presenter.jsonTitle.bind { title in
             jsonLabel.text = title as String?
