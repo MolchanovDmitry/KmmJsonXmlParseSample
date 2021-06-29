@@ -87,13 +87,17 @@ class MainTabVC: UITabBarController {
         presenter.jsonTitle.bind { title in
             jsonLabel.text = title as String?
         }
+        presenter.dbValue.bind{ dbPropValue in
+            self.dbTextField.text = dbPropValue as String?
+        }
     }
     
     @objc private func setDBValue() {
+        presenter.setDbValue(newValue: dbTextField.text ?? "empty")
     }
     
     @objc private func getDBValue() {
-        
+        presenter.getDbValue()
     }
 }
         
