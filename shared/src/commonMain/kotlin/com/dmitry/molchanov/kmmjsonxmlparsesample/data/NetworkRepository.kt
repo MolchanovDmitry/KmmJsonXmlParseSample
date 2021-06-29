@@ -9,7 +9,10 @@ class NetworkRepository {
 
     val client = HttpClient {
         install(JsonFeature) {
-            val jsonDecoder = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+            val jsonDecoder = kotlinx.serialization.json.Json {
+                ignoreUnknownKeys = true
+                useAlternativeNames = false
+            }
             serializer = KotlinxSerializer(jsonDecoder)
         }
     }
