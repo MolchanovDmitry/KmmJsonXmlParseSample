@@ -10,7 +10,7 @@ import shared
 
 class MainTabVC: UITabBarController {
     
-    private let presenter = MainViewModel()
+    private let presenter = IosViewModel()
     
     lazy var setDBButton: UIButton = {
             let button = UIButton()
@@ -53,7 +53,7 @@ class MainTabVC: UITabBarController {
         let greetingLabel = UILabel()
         greetingLabel.textColor = .white
         greetingLabel.translatesAutoresizingMaskIntoConstraints = false
-        greetingLabel.text = presenter.greeting
+        //greetingLabel.text = presenter.greeting
         
         view.addSubview(jsonLabel)
         view.addSubview(greetingLabel)

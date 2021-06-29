@@ -13,6 +13,7 @@ sqldelight {
         packageName = "com.dmitry.molchanov.kmmjsonxmlparsesample.db"
         sourceFolders = listOf("sqldelight")
     }
+    linkSqlite = true
 }
 
 version = "1.0"
