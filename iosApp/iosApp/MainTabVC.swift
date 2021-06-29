@@ -17,19 +17,25 @@ class MainTabVC: UITabBarController {
         
         presenter.loadTitleFromJson()
         
-        let label = UILabel()
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        //label.text = presenter.greeting
+        let jsonLabel = UILabel()
+        jsonLabel.textColor = .white
+        jsonLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(jsonLabel)
+        
+        let greetingLabel = UILabel()
+        greetingLabel.textColor = .white
+        greetingLabel.adjustsFontForContentSizeCategory = false
+        greetingLabel.text = presenter.greeting
+        view.addSubview(greetingLabel)
         
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            greetingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            //jsonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            //jsonLabel.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 10)
         ])
         presenter.jsonTitle.bind { title in
-            print(title)
-            label.text = title as String?
+            jsonLabel.text = title as String?
         }
     }
 }
