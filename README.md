@@ -9,6 +9,10 @@
 * Новая технология. Необходимо время на ее исследование.
 * На iOS корутины могут работать только в главном потоке. [Подробнее](https://github.com/MolchanovDmitry/KmmJsonXmlParseSample/blob/master/shared/src/iosMain/kotlin/com/dmitry/molchanov/kmmjsonxmlparsesample/Dispatcher.kt)
 
+## Как запустить iOS проект?
+* Запустить Xcode
+* Открыть workspace файл директории iosApp
+
 ## Примечания.
 * [Мультиплатформенные библиотеки](https://github.com/AAkira/Kotlin-Multiplatform-Libraries)
 * Асинхронность сетевых запросов ktor на iOS достигается компилированием KMM кода в NSURLConnection, NSURLSession..
