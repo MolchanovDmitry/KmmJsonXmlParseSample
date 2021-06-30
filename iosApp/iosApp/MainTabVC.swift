@@ -53,7 +53,7 @@ class MainTabVC: UITabBarController {
         let greetingLabel = UILabel()
         greetingLabel.textColor = .white
         greetingLabel.translatesAutoresizingMaskIntoConstraints = false
-        //greetingLabel.text = presenter.greeting
+        greetingLabel.text = presenter.greeting
         
         view.addSubview(jsonLabel)
         view.addSubview(greetingLabel)
