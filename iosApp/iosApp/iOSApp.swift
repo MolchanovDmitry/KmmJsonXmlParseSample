@@ -3,11 +3,9 @@ import SwiftUI
 @main
 struct iOSApp: App {
     
-    @UIApplicationDelegateAdaptor(DimaDelegate.self) var appDelegate
+    @UIApplicationDelegateAdaptor(UIDelegate.self) var appDelegate
     
 	var body: some Scene {
-		WindowGroup {
-			//ContentView()
-		}
+		WindowGroup {}
 	}
 }

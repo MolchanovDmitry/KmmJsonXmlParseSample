@@ -1,14 +1,7 @@
-//
-//  AppDelegate.swift
-//  iKmmSample
-//
-//  Created by Дмитрий on 28.06.2021.
-//
-
 import UIKit
 
 //@main
-class DimaDelegate: UIResponder, UIApplicationDelegate {
+class UIDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

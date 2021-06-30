@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MoviesIOS
-//
-//  Created by Anna Zharkova on 24.01.2021.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -15,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = MainTabVC()
+            window.rootViewController = MainVC()
             self.window = window
             window.makeKeyAndVisible()
         }
