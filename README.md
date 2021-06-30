@@ -7,7 +7,6 @@
 # Недостатки:
 * Более долгая сорка.
 * Новая технология. Необходимо время на ее исследование.
-* На iOS корутины могут работать только в главном потоке. [Подробнее](https://github.com/MolchanovDmitry/KmmJsonXmlParseSample/blob/master/shared/src/iosMain/kotlin/com/dmitry/molchanov/kmmjsonxmlparsesample/Dispatcher.kt)
 
 ## Как запустить iOS проект?
 * Запустить Xcode
@@ -16,4 +15,5 @@
 ## Примечания.
 * [Мультиплатформенные библиотеки](https://github.com/AAkira/Kotlin-Multiplatform-Libraries)
 * [Кто еще использует KMM](https://kotlinlang.org/lp/mobile/case-studies)
-* Асинхронность сетевых запросов ktor на iOS достигается компилированием KMM кода в NSURLConnection, NSURLSession..
+* [Особенности мультипоточки в нативе](https://github.com/Kotlin/kotlinx.coroutines/issues/462)
+* Асинхронность сетевых запросов ktor на iOS достигается компилированием KMM кода в NSURLConnection, NSURLSession.. 
